@@ -1,0 +1,88 @@
+{
+    "name": "ndmc-network",
+    "version": "1.0.0",
+    "client": {
+        "organization": "ndmc",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "3000"
+                }
+            }
+        }
+    },
+    "organizations": {
+        "ndmc": {
+            "mspid": "NDMCMSP",
+            "peers": [
+                "peer0.ndmc.ndmc.com",
+                "peer1.ndmc.ndmc.com",
+                "peer2.ndmc.ndmc.com",
+                "peer3.ndmc.ndmc.com"
+            ],
+            "certificateAuthorities": [
+                "ca-ndmc"
+            ]
+        }
+    },
+    "peers": {
+        "peer0.ndmc.ndmc.com": {
+            "url": "grpcs://peer0.ndmc.ndmc.com:7051",
+            "tlsCACerts": { 
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICFzCCAb2gAwIBAgIUSmNC5gpyFZZrGGaNkvJh+rSAhR4wCgYIKoZIzj0EAwIw\naDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQK\nEwtIeXBlcmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBmYWJyaWMt\nY2Etc2VydmVyMB4XDTIxMTIwMTA3NTEwMFoXDTM2MTEyNzA3NTEwMFowaDELMAkG\nA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQKEwtIeXBl\ncmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBmYWJyaWMtY2Etc2Vy\ndmVyMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE60LAZo2SwMO0wFnBwo01g44+\nPwcz7bNKWTLbkrGGnC03w0QjkxwTydYxYZ/vc4vZ+qyYVladBuVn7t9XVootSaNF\nMEMwDgYDVR0PAQH/BAQDAgEGMBIGA1UdEwEB/wQIMAYBAf8CAQEwHQYDVR0OBBYE\nFOUo1+Z1odtBh88j4Cp9XWiS0+RSMAoGCCqGSM49BAMCA0gAMEUCIQCy4+XMfUYv\n9OboNOi4QGyOJVfJB3RF+u5PHgwbY1oQEgIgKGwlm/0l7yaxqN9YpMmjS8tWB+MN\nmUpG/IoLGwIIIjo=\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer0.ndmc.ndmc.com",
+                "hostnameOverride": "peer0.ndmc.ndmc.com",
+                "grpc.keepalive_time_ms": 600000
+            }
+        },
+        "peer1.ndmc.ndmc.com": {
+            "url": "grpcs://peer1.ndmc.ndmc.com:7051",
+            "tlsCACerts": { 
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICFzCCAb2gAwIBAgIUSmNC5gpyFZZrGGaNkvJh+rSAhR4wCgYIKoZIzj0EAwIw\naDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQK\nEwtIeXBlcmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBmYWJyaWMt\nY2Etc2VydmVyMB4XDTIxMTIwMTA3NTEwMFoXDTM2MTEyNzA3NTEwMFowaDELMAkG\nA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQKEwtIeXBl\ncmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBmYWJyaWMtY2Etc2Vy\ndmVyMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE60LAZo2SwMO0wFnBwo01g44+\nPwcz7bNKWTLbkrGGnC03w0QjkxwTydYxYZ/vc4vZ+qyYVladBuVn7t9XVootSaNF\nMEMwDgYDVR0PAQH/BAQDAgEGMBIGA1UdEwEB/wQIMAYBAf8CAQEwHQYDVR0OBBYE\nFOUo1+Z1odtBh88j4Cp9XWiS0+RSMAoGCCqGSM49BAMCA0gAMEUCIQCy4+XMfUYv\n9OboNOi4QGyOJVfJB3RF+u5PHgwbY1oQEgIgKGwlm/0l7yaxqN9YpMmjS8tWB+MN\nmUpG/IoLGwIIIjo=\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer1.ndmc.ndmc.com",
+                "hostnameOverride": "peer1.ndmc.ndmc.com",
+                "grpc.keepalive_time_ms": 600000
+            }
+        },
+        "peer2.ndmc.ndmc.com": {
+            "url": "grpcs://peer2.ndmc.ndmc.com:7051",
+            "tlsCACerts": { 
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICFzCCAb2gAwIBAgIUSmNC5gpyFZZrGGaNkvJh+rSAhR4wCgYIKoZIzj0EAwIw\naDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQK\nEwtIeXBlcmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBmYWJyaWMt\nY2Etc2VydmVyMB4XDTIxMTIwMTA3NTEwMFoXDTM2MTEyNzA3NTEwMFowaDELMAkG\nA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQKEwtIeXBl\ncmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBmYWJyaWMtY2Etc2Vy\ndmVyMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE60LAZo2SwMO0wFnBwo01g44+\nPwcz7bNKWTLbkrGGnC03w0QjkxwTydYxYZ/vc4vZ+qyYVladBuVn7t9XVootSaNF\nMEMwDgYDVR0PAQH/BAQDAgEGMBIGA1UdEwEB/wQIMAYBAf8CAQEwHQYDVR0OBBYE\nFOUo1+Z1odtBh88j4Cp9XWiS0+RSMAoGCCqGSM49BAMCA0gAMEUCIQCy4+XMfUYv\n9OboNOi4QGyOJVfJB3RF+u5PHgwbY1oQEgIgKGwlm/0l7yaxqN9YpMmjS8tWB+MN\nmUpG/IoLGwIIIjo=\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer2.ndmc.ndmc.com",
+                "hostnameOverride": "peer2.ndmc.ndmc.com",
+                "grpc.keepalive_time_ms": 600000
+            }
+        },
+        "peer3.ndmc.ndmc.com": {
+            "url": "grpcs://peer3.ndmc.ndmc.com:7051",
+            "tlsCACerts": { 
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICFzCCAb2gAwIBAgIUSmNC5gpyFZZrGGaNkvJh+rSAhR4wCgYIKoZIzj0EAwIw\naDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQK\nEwtIeXBlcmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBmYWJyaWMt\nY2Etc2VydmVyMB4XDTIxMTIwMTA3NTEwMFoXDTM2MTEyNzA3NTEwMFowaDELMAkG\nA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQKEwtIeXBl\ncmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBmYWJyaWMtY2Etc2Vy\ndmVyMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE60LAZo2SwMO0wFnBwo01g44+\nPwcz7bNKWTLbkrGGnC03w0QjkxwTydYxYZ/vc4vZ+qyYVladBuVn7t9XVootSaNF\nMEMwDgYDVR0PAQH/BAQDAgEGMBIGA1UdEwEB/wQIMAYBAf8CAQEwHQYDVR0OBBYE\nFOUo1+Z1odtBh88j4Cp9XWiS0+RSMAoGCCqGSM49BAMCA0gAMEUCIQCy4+XMfUYv\n9OboNOi4QGyOJVfJB3RF+u5PHgwbY1oQEgIgKGwlm/0l7yaxqN9YpMmjS8tWB+MN\nmUpG/IoLGwIIIjo=\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer3.ndmc.ndmc.com",
+                "hostnameOverride": "peer3.ndmc.ndmc.com",
+                "grpc.keepalive_time_ms": 600000
+            }
+        }
+
+    },
+    "certificateAuthorities": {
+        "ca-ndmc": {
+            "url": "https://ca.ndmc.ndmc.com:7054",
+            "caName": "ca-ndmc",
+            "tlsCACerts": {
+                "pem": ["-----BEGIN CERTIFICATE-----\nMIICFzCCAb2gAwIBAgIUSmNC5gpyFZZrGGaNkvJh+rSAhR4wCgYIKoZIzj0EAwIw\naDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQK\nEwtIeXBlcmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBmYWJyaWMt\nY2Etc2VydmVyMB4XDTIxMTIwMTA3NTEwMFoXDTM2MTEyNzA3NTEwMFowaDELMAkG\nA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMRQwEgYDVQQKEwtIeXBl\ncmxlZGdlcjEPMA0GA1UECxMGRmFicmljMRkwFwYDVQQDExBmYWJyaWMtY2Etc2Vy\ndmVyMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE60LAZo2SwMO0wFnBwo01g44+\nPwcz7bNKWTLbkrGGnC03w0QjkxwTydYxYZ/vc4vZ+qyYVladBuVn7t9XVootSaNF\nMEMwDgYDVR0PAQH/BAQDAgEGMBIGA1UdEwEB/wQIMAYBAf8CAQEwHQYDVR0OBBYE\nFOUo1+Z1odtBh88j4Cp9XWiS0+RSMAoGCCqGSM49BAMCA0gAMEUCIQCy4+XMfUYv\n9OboNOi4QGyOJVfJB3RF+u5PHgwbY1oQEgIgKGwlm/0l7yaxqN9YpMmjS8tWB+MN\nmUpG/IoLGwIIIjo=\n-----END CERTIFICATE-----\n"]
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        }   
+    }
+}
+

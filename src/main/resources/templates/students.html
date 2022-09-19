@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--<head>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <p th:text="'Hello, ' + ${name} + '!'" />-->
+<!--</body>-->
+<!--</html>-->
+
+<!--<html>-->
+<head>
+    <title>Birth Certificate</title>
+
+    <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   -->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+
+    <style>
+.nomargin{margin-right: 0px !important;margin-left: 0px !important;}
+.applicationo{margin-bottom: 2%;margin-top: 4%;}
+input{border: 1px solid #ccc; border-radius: 4px;}
+.box1{margin-bottom: 3%;}
+.basic-padding{background-color: #6f8294;margin-bottom: 2%;}
+.inner-box span img{width: 18px;height: 18px;margin: 0px 5px 3px 0px;vertical-align: middle;}
+.inner-box span{color: #fff;margin: 0px 4px;font-size: 16px;vertical-align: middle;}
+.basic-padding{padding: 8px;padding-top: 4px;}
+.star{color: red;}
+.basic-form{padding-left: 3%; padding-bottom: 1%;}
+.select-field{width: 200px;border: 1px solid transparent;color: #212529;padding: 6px;}
+.textfield{border: 1px solid #cccc;color: #212529;padding: 6px;}
+.select-field-two{width: 200px;border: 1px solid transparent;color: #212529;padding: 6px;}
+.basic-label{padding-top: 4%;color: #000000; font-size: 16px; font-weight: bold;}
+label{color: #5b5555 !important;font-weight: bold; font-size: 17px !important;}
+.line{background-color: #dedede;width: 100%;height: 2px;margin-bottom: 2%;}
+
+.main-heading{padding-top: 1%; padding-bottom: 1%;text-align: center;}
+.dash{font-size: 28px;color: #007398;vertical-align: middle;}
+body{background-color: #fff !important;}
+table{width: 100%;}
+
+/*.inner-box{margin-left: 19%;margin-right: 6%;}*/
+
+
+</style>
+
+
+</head>
+<body>
+
+<!-- Header for Web code start here -->
+<div class="container-fluid nopadding">
+    <div class="container">
+        <div class="Text-center main-heading">
+            <img class="dash" src="https://online.ndmc.gov.in/dngrpt/ndmccss/NDMC_Logo.png" alt="NDMC Logo" width="100px" height="80px" />
+            <span class="dash"><b>Birth Certificate</b></span>
+        </div>
+        <h1 class="line"></h1>
+    </div>
+
+
+    <div class="container">
+        <div class="box1">
+            <div class="inner-box">
+
+                <table>
+                    <tr>
+                        <td><label class="basic-label">Child's Name:</label></td>
+                        <!--                        <p th:text="'Hello, ' + ${name} + '!'" />-->
+                        <td><input type="text" class="select-field" placeholder="Kartik Singh" readonly="readonly" th:value="${childName}" /></td>
+
+                        <td><label class="basic-label">Date of Birth:</label></td>
+                        <td><input type="text" class="select-field" placeholder="16-04-1997" readonly="readonly" th:value="${dateOfBirth}" /></td>
+                    </tr>
+
+                    <tr>
+                        <td><label class="basic-label">Time of Birth:</label></td>
+                        <td><input type="text" class="select-field" placeholder="Kartik Singh" readonly="readonly" th:value="${birthOfTime}" /></td>
+
+                        <td><label class="basic-label">Gender:</label></td>
+                        <td><input type="text" class="select-field" placeholder="Gender" readonly="readonly" th:value="${gender}" /></td>
+                    </tr>
+
+                    <tr>
+                        <td><label class="basic-label">City of Birth:</label></td>
+                        <td><input type="text" class="select-field" placeholder="Delhi" readonly="readonly" th:value="${birthCity}" /></td>
+
+                        <td><label class="basic-label">Country of Birth:</label></td>
+                        <td><input type="text" class="select-field" placeholder="India" readonly="readonly" th:value="${birthCountry}" /></td>
+                    </tr>
+
+                    <tr>
+                        <td><label class="basic-label">Mother's name:</label></td>
+                        <td><input type="text" class="select-field" placeholder="Pooja Singh" readonly="readonly" th:value="${motherName}" /></td>
+
+                        <td><label class="basic-label">Father's name:</label></td>
+                        <td><input type="text" class="select-field" placeholder="Arjun Singh" readonly="readonly" th:value="${fatherName}" /></td>
+                    </tr>
+
+                    <tr>
+                        <td><label class="basic-label">Address:</label></td>
+                        <td><input type="text" class="select-field" placeholder="2nd Floor Green Park" readonly="readonly" th:value="${address}" /></td>
+
+                        <td><label class="basic-label">City:</label></td>
+                        <td><input type="text" class="select-field" placeholder="Delhi" readonly="readonly" th:value="${city}" /></td>
+                    </tr>
+
+                    <tr>
+                        <td><label class="basic-label">State:</label></td>
+                        <td><input type="text" class="select-field" placeholder="Delhi" readonly="readonly" th:value="${state}" /></td>
+
+                        <td><label class="basic-label">Country:</label></td>
+                        <td><input type="text" class="select-field" placeholder="India" readonly="readonly" th:value="${country}" /></td>
+                    </tr>
+
+                    <tr>
+                        <td><label class="basic-label">Region:</label></td>
+                        <td><input type="text" class="select-field" placeholder="Northeast India" readonly="readonly" th:value="${religion}" /></td>
+
+                        <td><label class="basic-label">Postal Code:</label></td>
+                        <td><input type="text" class="select-field" placeholder="110045" readonly="readonly" th:value="${pincode}" /></td>
+                    </tr>
+                    <tr>
+                        <td><label class="basic-label">Father's Aadhar No:</label></td>
+                        <!--                        <p th:text="'Hello, ' + ${name} + '!'" />-->
+                        <td><input type="text" class="select-field" placeholder="Aadhar" readonly="readonly" th:value="${fatherAadharNo}" /></td>
+
+                        <td><label class="basic-label">Mother's Aadhar No:</label></td>
+                        <td><input type="text" class="select-field" placeholder="16-04-1997" readonly="readonly" th:value="${motherAadharNo}" /></td>
+                    </tr>
+                    <tr>
+                        <td><label class="basic-label">Child's Aadhar No:</label></td>
+                        <!--                        <p th:text="'Hello, ' + ${name} + '!'" />-->
+                        <td><input type="text" class="select-field" placeholder="Kartik Singh" readonly="readonly" th:value="${childAadharNo}" /></td>
+
+                        <td><label class="basic-label">Gaurdian's Aadhar No:</label></td>
+                        <td><input type="text" class="select-field" placeholder="16-04-1997" readonly="readonly" th:value="${guardianAadharNo}" /></td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+application:
+    name: NDMCRECORDS
+    spring:
+        main:
+            wep-application-type:"none"
+logging:
+    file:
+        name:  /home/ndmc-api/logs/ndmc-api-logs.log
+        path: /home/ndmc-api/logs/
+    level:
+        org:
+            springframework: info
+        com:
+            ndmc: debug
+    pattern:
+        console: '%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{365} - %msg%n'
+        file: '"%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{365} - %msg%n"'
+        rolling-file-name: logs/ndmc-api-logs-%d{yyyy-MM-dd}.%i.log.gz
+        max-file-size: 200MB
+
+server:
+    port: 8081
+spring:
+    datasource:
+        password: Ndmc@123
+        url:  jdbc:mysql://172.16.200.221:3306/migration_ndmc_test
+        username: ndmcapi
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        show-sql: true
+    mvc:
+        format:
+            date: yyyy-MM-dd
+            date-time: yyyy-MM-dd HH:mm:ss
+            time: HH:mm:ss
+    servlet:
+        multipart:
+            enabled: true
+            file-size-threshold: 2KB
+            max-file-size: 10MB
+            max-request-size: 10MB
+
+# second(0-59) minute(0 - 59) hour(0 - 23) day-of-the-month(1 - 31) month(1 - 12/JAN-DEC) day-of-the-week(0 - 7/0 or 7 is Sunday, or MON-SUN)
+scheduler:
+    cronSync: "0 */15 * * * ?"
+    cronCache: "0 0 */23 * * ?"
+file:
+    upload:
+        upload-dir: ~/Documents/NDMC/upload-directory
+        sdm-letter: ~/Documents/NDMC/sdm-letter
+

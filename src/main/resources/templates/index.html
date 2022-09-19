@@ -1,0 +1,211 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View Application Details</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--    <link rel="stylesheet"  href="/assets/css/style.css">-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/font-awesome.min.css}">
+
+</head>
+<body>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+        <!-- Header for Web code start here -->
+        <div class="outer-border">
+    <div class="container-fluid nopadding">
+        <nav class="navbar navbar-expand-md bg-nav" >
+    <a class="navbar-brand">
+
+        <img class="dash" th:src="@{/image/logo2.png}" alt="NDMC Logo" width="100px" height="100px" />
+
+    </a>
+    <ul class="navbar-nav menu-one">
+        <img class="dash" th:src="@{/image/logo1.png}" alt="NDMC Logo" width="55px" />
+    </ul>
+    <ul class="nav navbar-nav" id="down-logout">
+        <img class="dash" th:src="@{/image/black-logo-1.png}" alt="NDMC Logo" width="85px" height="85px" />
+    </ul>
+</nav>
+
+        <form class="main-form">
+            <fieldset>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="basic-label"><b>NDMC Birth / Still Birth / Death Certificate Authentication
+                                Page</b>
+                        </label>
+                    </div>
+                </div>
+
+                        <div class="row basic-form">
+                            <div class="col-md-3 col-s-3 ">
+                                <label class="basic-label"><b>Organization Name:-</b></label>
+                            </div>
+                            <div class="col-md-3 col-s-3">
+                                <span class="basic-text">New Delhi Municipal Council</span>
+                            </div>
+                            <div class="col-md-3 col-s-3">
+                                <label class="basic-label"><b>Department Name:-</b></label>
+                            </div>
+                            <div class="col-md-3 col-s-3">
+                                <span class="basic-text">Health Department</span>
+                            </div>
+                        </div> 
+
+                        <div class="row basic-form">
+                            <div class="col-md-3 col-s-3 ">
+                                <label class="basic-label"><b>Activity Type:-</b></label>
+                            </div>
+                            <div class="col-md-3 col-s-3">
+                               <span class="basic-text"
+                            *ngIf="recordData.recordType == 'DEATH' || recordData.recordType == 'BIRTH'">{{recordData.recordType
+                            | titlecase}}</span>
+                        <span class="basic-text" *ngIf="recordData.recordType == 'STILL_BIRTH'">Still Birth</span>
+                            </div>
+                            <div class="col-md-3 col-s-3 ">
+                                <label class="basic-label"><b>Name:-</b></label>
+                            </div>
+                            <div class="col-md-3 col-s-3">
+                                <span class="basic-text">{{recordData.data.name}}</span>
+                            </div>
+                        </div>
+
+                        <div class="row basic-form">
+                            <div class="col-md-3 col-s-3 ">
+                                <label class="basic-label"><b>Gender:-</b></label>
+                            </div>
+                            <div class="col-md-3 col-s-3">
+                                <span class="basic-text">{{recordData.data.genderCode}}</span>
+                            </div>
+                            <div class="col-md-3 col-s-3 ">
+                                <label class="basic-label"><b>Date of Event:-</b></label>
+                            </div>
+                            <div class="col-md-3 col-s-3">
+                                <span class="basic-text">{{recordData.data.eventDate}}</span>
+                            </div>
+                        </div>
+
+                        <div class="row basic-form">
+                            <div class="col-md-3 col-s-3 ">
+                                <label class="basic-label"><b>Place of Event:-</b></label>
+                            </div>
+                            <div class="col-md-3 col-s-3">
+                                <span class="basic-text">{{recordData.data.eventPlaceFlag}}</span>
+                            </div>
+                            <div class="col-md-3 col-s-3 ">
+                                <label class="basic-label"><b>Mother Name:-</b></label>
+                            </div>
+                            <div class="col-md-3 col-s-3">
+                                <span class="basic-text">{{recordData.data.motherName}}</span>
+                            </div>
+                        </div>
+
+                        <div class="row basic-form">
+                            <div class="col-md-3 col-s-3 ">
+                                <label class="basic-label"><b>Mother UID No.:-</b></label>
+                            </div>
+                            <div class="col-md-3 col-s-3">
+                                <span class="basic-text">{{recordData.data.motherAdharNumber}}</span>
+                            </div>
+                            <div class="col-md-3 col-s-3 ">
+                                <label class="basic-label"><b>Father Name:-</b></label>
+                            </div>
+                            <div class="col-md-3 col-s-3">
+                                <span class="basic-text">{{recordData.data.fatherName}}</span>
+                            </div>
+                        </div>
+
+                        <div class="row basic-form">
+                            <div class="col-md-3 col-s-3 ">
+                                <label class="basic-label"><b>Father UID No.:-</b></label>
+                            </div>
+                            <div class="col-md-3 col-s-3">
+                                <span class="basic-text">{{recordData.data.fatherAdharNumber}}</span>
+                            </div>
+                            <div class="col-md-3 col-s-3 ">
+                                <label class="basic-label"><b>Husband/Wife Name:-</b></label>
+                            </div>
+                            <div class="col-md-3 col-s-3">
+                                <span class="basic-text">{{recordData.data.husbandWifeName}}</span>
+                            </div>
+                        </div>
+
+                        <div class="row basic-form">
+                            <div class="col-md-3 col-s-3 ">
+                                <label class="basic-label"><b>Husband/Wife UID No:-</b></label>
+                            </div>
+                            <div class="col-md-3 col-s-3">
+                                <span class="basic-text">{{recordData.data.husbandWifeUID}}</span>
+                            </div>
+                             <div class="col-md-3 col-s-3 ">
+                                <label class="basic-label"><b>Event Address of Birth/Death:-</b></label>
+                            </div>
+                            <div class="col-md-3 col-s-3">
+                                <span class="basic-text1"
+                            *ngIf="recordData.recordType == 'BIRTH'">{{recordData.data.addressAtBirth}}</span>
+                        <span class="basic-text1"
+                            *ngIf="recordData.recordType == 'DEATH'">{{recordData.data.eventPlaceFlag}}</span>
+                        <span class="basic-text1"
+                            *ngIf="recordData.recordType == 'STILL_BIRTH'">{{recordData.data.addressAtBirth}}</span>
+                            </div>
+                        </div>
+
+                        <div class="row basic-form">
+                            <div class="col-md-3 col-s-3 ">
+                                <label class="basic-label"><b>Permanent Address of Birth/Death:-</b></label>
+                            </div>
+                            <div class="col-md-3 col-s-3">
+                                <span class="basic-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu</span>
+                            </div>
+                            <div class="col-md-3 col-s-3 ">
+                                <label class="basic-label"><b>Application Number.:-</b></label>
+                            </div>
+                            <div class="col-md-3 col-s-3">
+                                <span class="basic-text">{{recordData.applicationNumber}}</span>
+                            </div>
+                        </div>
+
+                        <div class="row basic-form">
+                            <div class="col-md-3 col-s-3 ">
+                                <label class="basic-label"><b>Registration Number:-</b></label>
+                            </div>
+                            <div class="col-md-3 col-s-3">
+                                <span class="basic-text">{{recordData.data.registrationNumber}}</span>
+                            </div>
+                             <div class="col-md-3 col-s-3 ">
+                                <label class="basic-label"><b>Registration Date:-</b></label>
+                            </div>
+                            <div class="col-md-3 col-s-3">
+                                <span class="basic-text">{{recordData.data.registrationDatetime}}</span>
+                            </div>
+                        </div>
+
+                        <div class="row basic-form">
+                            <div class="col-md-3 col-s-3 ">
+                                <label class="basic-label"><b>Issue Date:-</b></label>
+                            </div>
+                            <div class="col-md-3 col-s-3">
+                                <span class="basic-text">{{recordData.printedAt}}</span>
+                            </div>
+                             <div class="col-md-3 col-s-3 ">
+                                <label class="basic-label"><b>Authentication Status:</b></label>
+                            </div>
+                            <div class="col-md-3 col-s-3">
+                                <span class="basic-text">{{recordData.data.status}}</span>
+                            </div>
+                        </div>                                               
+            </fieldset>
+        </form>
+        <div class="row nomargin">
+            <div class="note">
+                <p>This is official webpage of NDMC. 2016 &copy; || All Rights
+                    Reserved || Best View in Google Chrome and IE version 9 and above.</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
